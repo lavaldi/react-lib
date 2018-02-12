@@ -1,6 +1,6 @@
 {
   "name": "react-lib-lavaldi-example",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./lib/index.js",
   "engines": {
     "node": ">=4.0.0"
@@ -10,8 +10,15 @@
     "email": "claumavaldivieso@gmail.com",
     "url": "http://lavaldi.com/"
   },
-  "files": ["lib"],
-  "keywords": ["components", "react", "react-component", "toolkit"],
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "components",
+    "react",
+    "react-component",
+    "toolkit"
+  ],
   "private": false,
   "dependencies": {
     "react": "^16.2.0",
@@ -82,17 +89,17 @@
     "test": "node scripts/test.js --env=jsdom",
     "build:css": "cpx \"./src/components/**/*.css\" ./lib",
     "prebuild:lib": "rimraf lib",
-    "build:lib":
-      "npm-run-all --parallel build:commonjs build:css build:copy-files",
+    "build:lib": "npm-run-all --parallel build:commonjs build:css build:copy-files",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "predeploy:docs": "npm run build:docs",
     "deploy:docs": "gh-pages -d build",
-    "build:commonjs":
-      "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js",
+    "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js",
     "prepublish": "npm run build:lib"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/testSetup.js"
@@ -106,10 +113,11 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
-        "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
