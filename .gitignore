@@ -9,6 +9,12 @@
 # production
 /build
 
+# built component library
+/lib
+
+# Generated component data
+/config/componentData.js
+
 # misc
 .DS_Store
 .env.local
